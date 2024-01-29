@@ -22,7 +22,7 @@ class Societe
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $nom;
+    public $nom;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)

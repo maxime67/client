@@ -7,15 +7,28 @@
 
     <table class="table">
         <thead>
-            <tr>
-                <th>Id</th>
-                <th>Nom</th>
-                <th>Prenom</th>
-                <th>Commentaire</th>
-                <th>actions</th>
-            </tr>
+        <tr>
+            <th>Id</th>
+            <th>Nom</th>
+            <th>Prenom</th>
+            <th>Commentaire</th>
+            <th>actions</th>
+        </tr>
         </thead>
         <tbody>
+        {% for client in clients %}
+            <div class="card">
+                <div class="container-fluid">
+                    {{ client.prenom }}
+                    {{ client.nom }}
+                    {{ client.commentaire }}
+                    {% if client.societe.0 != null %}
+                        {{ client.societe }}
+                    {% endif %}
+                </div>
+            </div>
+        {% endfor %}
+
         {% for client in clients %}
             <tr>
                 <td>{{ client.id }}</td>
